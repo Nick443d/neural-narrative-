@@ -508,7 +508,7 @@ body::after{
   font-family:'Courier Prime',monospace;font-size:.76rem;letter-spacing:.15em;
   text-transform:uppercase;color:#D4C9A8;text-decoration:none;
   padding:1rem 0;border-bottom:1px solid #1C1C18;
-}
+}.mobile-menu-langs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid #2A2A25}.mobile-menu-langs a{font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.06em;color:#8A8070;text-decoration:none;padding:.4rem .65rem;border:1px solid #2A2A25;border-radius:3px}.mobile-menu-langs a.active{color:#C41E1E;border-color:#C41E1E}
 @media(max-width:768px){
   .hamburger-btn{display:flex}
 }
@@ -673,6 +673,12 @@ footer{
       <a href="#manifesto">Manifesto</a>
       <a href="contact-en.html">Contact</a>
     </nav>
+    <div class="mobile-menu-langs">
+      <a href="index.html">🇫🇷 FR</a>
+      <a class="active" href="index-en.html">🇬🇧 EN</a>
+      <a href="index-de.html">🇩🇪 DE</a>
+      <a href="index-ja.html">🇯🇵 JA</a>
+    </div>
   </div>
 </div>
 
@@ -960,7 +966,7 @@ document.querySelectorAll('.info-toggle').forEach(btn => {
   if (!btn || !menu) return;
   const closeBtn = menu.querySelector('.mobile-menu-close');
   const backdrop  = menu.querySelector('.mobile-menu-backdrop');
-  const links     = menu.querySelectorAll('.mobile-menu-links a');
+  const links     = menu.querySelectorAll('.mobile-menu-links a, .mobile-menu-langs a');
 
   function openMenu() {
     menu.classList.add('open');

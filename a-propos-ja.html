@@ -60,7 +60,7 @@ body::after{
 .mobile-menu-close{align-self:flex-end;background:none;border:none;color:#C41E1E;font-size:1.8rem;line-height:1;cursor:none;margin-bottom:2.2rem}
 .mobile-menu-logo{font-family:'Special Elite',cursive;font-size:.9rem;letter-spacing:.3em;color:#C41E1E;text-transform:uppercase;margin-bottom:2.2rem}
 .mobile-menu-links{display:flex;flex-direction:column}
-.mobile-menu-links a{font-family:'Courier Prime',monospace;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;color:#D4C9A8;text-decoration:none;padding:1rem 0;border-bottom:1px solid #1C1C18}
+.mobile-menu-links a{font-family:'Courier Prime',monospace;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;color:#D4C9A8;text-decoration:none;padding:1rem 0;border-bottom:1px solid #1C1C18}.mobile-menu-langs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid #2A2A25}.mobile-menu-langs a{font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.06em;color:#8A8070;text-decoration:none;padding:.4rem .65rem;border:1px solid #2A2A25;border-radius:3px}.mobile-menu-langs a.active{color:#C41E1E;border-color:#C41E1E}
 @media(max-width:768px){.hamburger-btn{display:flex}.nav-links{display:none}}
 
 .page-hero{padding:9.5rem 3rem 3rem;max-width:820px;margin:0 auto}
@@ -176,6 +176,12 @@ footer{padding:2.5rem 3rem;border-top:1px solid #151510;display:flex;justify-con
       <a href="index-ja.html#manifesto">マニフェスト</a>
       <a href="contact-ja.html">お問い合わせ</a>
     </nav>
+    <div class="mobile-menu-langs">
+      <a href="a-propos.html">🇫🇷 FR</a>
+      <a href="a-propos-en.html">🇬🇧 EN</a>
+      <a href="a-propos-de.html">🇩🇪 DE</a>
+      <a class="active" href="a-propos-ja.html">🇯🇵 JA</a>
+    </div>
   </div>
 </div>
 
@@ -248,7 +254,7 @@ document.querySelectorAll('.em-link').forEach(el => {
   if (!btn || !menu) return;
   const closeBtn = menu.querySelector('.mobile-menu-close');
   const backdrop = menu.querySelector('.mobile-menu-backdrop');
-  const links = menu.querySelectorAll('.mobile-menu-links a');
+  const links = menu.querySelectorAll('.mobile-menu-links a, .mobile-menu-langs a');
   function openMenu(){menu.classList.add('open');menu.setAttribute('aria-hidden','false');btn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
   function closeMenu(){menu.classList.remove('open');menu.setAttribute('aria-hidden','true');btn.setAttribute('aria-expanded','false');document.body.style.overflow='';}
   btn.addEventListener('click', () => menu.classList.contains('open') ? closeMenu() : openMenu());
